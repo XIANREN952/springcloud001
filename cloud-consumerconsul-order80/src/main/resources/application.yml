@@ -1,0 +1,17 @@
+#配置服务端口
+server:
+  port: 80
+
+#服务注册配置
+spring:
+  application:
+    name: cloud-consumer-order
+  cloud:
+    #consul注册中心地址
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        hostname: 127.0.0.1
+        #引用上面的application.name
+        service-name: ${spring.application.name}
